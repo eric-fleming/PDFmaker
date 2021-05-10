@@ -5,6 +5,10 @@
 *.so
 *.dylib
 
+
+#PDF outputs
+output/
+
 # Test binary, built with `go test -c`
 *.test
 

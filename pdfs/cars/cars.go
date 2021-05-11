@@ -11,7 +11,7 @@ import (
 	"github.com/johnfercher/maroto/pkg/props"
 )
 
-func PrintPdf(path string) {
+func PrintPdf(path string, filename string) {
 	// initialize
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
 	m.SetPageMargins(20, 10, 20)
@@ -20,7 +20,7 @@ func PrintPdf(path string) {
 	buildHeading(m)
 	buildCarList(m)
 
-	err := m.OutputFileAndClose(path + "Mitsubishi-2017-report.pdf")
+	err := m.OutputFileAndClose(path + filename)
 	if err != nil {
 		fmt.Println("⚠️  Could not save PDF:", err)
 		os.Exit(1)
